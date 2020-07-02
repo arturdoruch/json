@@ -20,6 +20,12 @@ $jsonString = '';
 // If JSON is invalid `ArturDoruch\Json\UnexpectedJsonException` is thrown.
 $json = new Json($jsonString);
 
+// Get decoded JSON.
+$json->getDecoded();
+
+// Get encoded JSON with specified options like JSON_PRETTY_PRINT.
+$json->getEncoded();
+
 // Catch decoding exception
 try {
     $json = new Json($jsonString);
@@ -29,12 +35,6 @@ try {
     // Get error code.
     $exception->getCode();
 }
-
-// Get decoded JSON.
-$json->getDecoded();
-
-// Get encoded JSON with specified options like JSON_PRETTY_PRINT.
-$json->getEncoded();
 ```
 
 ### Highlight JSON syntax
@@ -45,7 +45,7 @@ use ArturDoruch\Json\JsonUtils;
 // JSON string. 
 $json = '{"string": "foo bar \"baz\"", "integer": 128, "float": -1.5678, "boolean": true, "null": null}';
 $classPrefix = 'json';
-JsonUtils::highlightSyntax($json, $classPrefix);
+$highlighted = JsonUtils::highlightSyntax($json, $classPrefix);
 ```
 
 Define the following CSS styles to styling JSON code:
