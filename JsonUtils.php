@@ -19,14 +19,14 @@ class JsonUtils
      *     span.{classPrefix}-boolean {}
      *     span.{classPrefix}-null {}
      *
-     * Inspired by https://stackoverflow.com/a/7220510
+     * Code inspired by https://stackoverflow.com/a/7220510
      *
      * @param string $json The formatted JSON string.
      * @param string $classPrefix The HTML span element class prefix.
      *
      * @return string
      */
-    public static function highlightSyntax(string $json, string $classPrefix = 'json')
+    public static function highlightSyntax(string $json, string $classPrefix = 'json'): string
     {
         $json = str_replace(['&', '<', '>'], ['&amp;', '&lt;', '&gt;'], $json);
         // ("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?
